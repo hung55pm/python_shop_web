@@ -1,0 +1,42 @@
+{% extends "index_templates.html" %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="/static/css/style_product.css"/>
+{%endblock%}
+
+
+{% block script%}
+
+{%endblock%}
+
+{% block content%}
+<div id="my-breadcrumbs">
+    <ul class="breadcrumb">
+        <li><a href="/">Trang chủ</a></li>
+        <li><a href="#">Đồng hồ kiddy</a></li>
+    </ul>
+</div>
+<div id="content-center">
+    <div class="image">
+
+        <amp-img src="{{product.photo.direct}}"
+                 width="200"
+                 height="200"
+                 layout="responsive"
+                 alt="AMP"></amp-img>
+    </div>
+    <div id="decription">
+    <h4>{{product.title}}</h4>
+        <p class="code"> Mã sản phẩm: {{product.product_code}}</p>
+        <p class="status"> Trình trạng:{{product.status}}</p>
+        <p class="price">
+            <span class="price-new">{{product.price_sale}}</span><br/>
+            <span class="price-old">{{product.price}}</span>
+        </p>
+        <p class="number_order"><span>Số lượng</span></p>
+        <input type="number" style="width:200px; height:20px;">
+        <button>Mua ngay</button>
+    </div>
+
+</div>
+{% endblock %}

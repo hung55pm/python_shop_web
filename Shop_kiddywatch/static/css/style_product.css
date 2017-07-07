@@ -1,0 +1,42 @@
+
+.content_center{
+    width: 60%;
+    position:relative;
+    margin: 0 auto;
+  }
+.image{
+float:left;
+width:24.99999%}
+
+.w3-quarter{
+width:30%;
+border-style: ridge;
+float:left;}
+a{
+text-decoration:none;
+}
+
+
+.w3-quarter h4{
+text-align: center;
+}
+.item-bottom{
+margin-top:10%;
+}
+.price{
+margin-left:5%;
+float:left;
+}
+.w3-quarter button{
+ width: 50%;
+ height:20%;
+ margin-left:5%;
+ float:right;
+}
+.row_content_1{
+position:relative;
+height:450px;
+}
+.row_content_2{
+position:absolute;
+}

@@ -1,0 +1,48 @@
+{% extends "index_templates.html" %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="/static/css/style_product.css"/>
+{%endblock%}
+
+
+{% block script%}
+{%endblock%}
+
+{% block content%}
+<div class="content_left">
+
+</div>
+<div class="content_center">
+    <h2>ĐỒNG HỒ THÔNG MINH</h2>
+    <div class="row_content_1">
+        {%if product%}
+        {% for x in product %}
+        <div class="w3-quarter">
+            <a href="{% url 'product-watch' id=x.objectid %}">
+                <amp-img src="{{x.photo.direct}}"
+                         width="200"
+                         height="200"
+                         layout="responsive"
+                         alt="AMP"></amp-img>
+            </a>
+            <h4><a href="{% url 'product-watch' id=x.objectid %}">{{x.title}}</a></h4>
+            <div class="item-bottom">
+                <p class="price">
+                    <span class="price-new">{{x.price_sale}}</span><br/>
+                    <span class="price-old">{{x.price}}</span>
+                </p>
+                <a href="{% url 'product-watch' id=x.objectid %}">
+                    <button>Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>Chưa có sản phẩm nào.</p>
+        {% endif %}
+    </div>
+    <div class="row_content_2">
+         <h2>PHỤ KIỆN NỔI BẬT</h2>
+    </div>
+</div>
+{% endblock %}
