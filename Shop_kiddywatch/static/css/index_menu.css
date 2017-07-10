@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
+  padding:0;
 }
 
 /*==Style cơ bản cho website==*/
@@ -8,16 +8,42 @@ body {
   font-family: sans-serif;
   color: #333;
 }
-
+div#content {
+    clear: both;
+    width: 80%;
+    margin: auto;
+}
+.menu-full{
+width:80%;
+margin:auto;
+}
+.logo{
+float:left;
+}
+img.img-logo{
+width:265px;
+height:75px;
+}
+.hotline{
+margin-top:10px}
+.hotline>img{
+width:245px;
+height:55px;
+}
+#menu{
+margin:15px;
+border-style: ridge;
+width:40%;
+float:left;
+}
 /*==Style cho menu===*/
 #menu ul {
-  background: #1F568B;
   list-style-type: none;
   text-align: center;
   z-index:2;
 }
 #menu li {
-  color: #f1f1f1;
+  color: #000000;
   display: inline-block;
   width: 200px;
   height: 40px;
@@ -26,15 +52,16 @@ body {
 }
 #menu a {
   text-decoration: none;
-  color: #fff;
+  color: #000000;
   display: block;
 }
 #menu a:hover {
-  background: #F1F1F1;
+  background: #77c33f;
   color: #333;
 }
 
 .sub-menu li {
+background: #F1F1F1;
   display: none;
 }
 

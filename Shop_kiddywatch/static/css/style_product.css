@@ -9,13 +9,40 @@ float:left;
 width:24.99999%}
 
 .w3-quarter{
+margin-top:30px;
 width:30%;
 border-style: ridge;
-float:left;}
+float:left;
+}
 a{
 text-decoration:none;
 }
-
+.price-old{
+text-decoration: line-through;
+}
+.list-product-watch{
+width:75%;
+float:left;
+margin-top:20px;
+}
+h2{
+margin:10px;
+}
+.navigation {
+margin-top:20px;
+  width: 20%;
+  float:left
+}
+.content_left{
+margin-top:50px;
+  width: 24%;
+  float:left
+}
+.content_center{
+width:75%;
+float:left;
+margin-top:20px;
+}
 
 .w3-quarter h4{
 text-align: center;
@@ -26,6 +53,7 @@ margin-top:10%;
 .price{
 margin-left:5%;
 float:left;
+padding-bottom:20px;
 }
 .w3-quarter button{
  width: 50%;
@@ -34,9 +62,79 @@ float:left;
  float:right;
 }
 .row_content_1{
-position:relative;
-height:450px;
+padding-top:50px;
 }
 .row_content_2{
-position:absolute;
+padding-top:50px;
+clear:left;
+}
+.product-watch-item{
+margin-top:30px;
+width:90%;
+border-style: ridge;
+float:left;
+}
+.item-left{
+width:40%;
+float:left;
+}
+.item-right{
+width:50%;
+float:left;
+}
+
+
+/* reset our lists to remove bullet points and padding */
+.mainmenu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* make ALL links (main and submenu) have padding and background color */
+.mainmenu a {
+  display: block;
+  background-color: #CCC;
+  text-decoration: none;
+  padding: 10px;
+  color: #000;
+}
+
+/* add hover behaviour */
+.mainmenu a:hover {
+    background-color: #C5C5C5;
+}
+
+
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+.mainmenu li:hover .submenu {
+  display: block;
+  max-height: 200px;
+}
+
+/*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+.submenu a {
+  background-color: #999;
+}
+
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+  background-color: #666;
+}
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
 }

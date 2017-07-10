@@ -9,19 +9,48 @@ from django.views.generic import TemplateView
 
 
 class HomeView(TemplateView):
-  template_name = 'home.html'
-  def get(self, request, *args, **kwargs):
-      product= Product.objects.all()
-      query=product
-      for x in product:
-          print x.photo.direct
+    template_name = 'home.html'
 
-      return render(request, self.template_name,context={'product': product})
+    def get(self, request, *args, **kwargs):
+        cat1 = Category.objects.get(id=1)
+        cat2 = Category.objects.get(id=2)
+        product1 = Product.objects.filter(catgory=cat1)
+        product2 = Product.objects.filter(catgory=cat2)
+        for x in product1:
+            print x.photo.direct
+        return render(request, self.template_name, context={'product': product1, "access": product2})
 
 
 class ProductView(TemplateView):
-  template_name = 'product_watch.html'
-  def get(self, request, id):
-      print id
-      product = Product.objects.get(objectid=id)
-      return render(request, self.template_name,context={'product': product})
+    template_name = 'product_watch.html'
+
+    def get(self, request, id):
+        print id
+        product = Product.objects.get(objectid=id)
+        return render(request, self.template_name, context={'product': product})
+
+
+class ProductCategory(TemplateView):
+    template_name = 'product_category.html'
+
+    def get(self, request):
+        cat1 = Category.objects.get(id=1)
+        product1 = Product.objects.filter(catgory=cat1)
+        return render(request, self.template_name,context={'product': product1})
+
+
+class ProductSimcard(TemplateView):
+    template_name = "product_simcard.html"
+
+    def get(self, request):
+        product = Product.objects.get(objectid=id)
+        return render(request, self.template_name,context={'product': product})
+
+
+class ProductStrapsandCharge(TemplateView):
+    template_name = "product_strapsandcharge.html"
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+

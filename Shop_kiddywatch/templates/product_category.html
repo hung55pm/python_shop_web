@@ -1,0 +1,65 @@
+{% extends "index_templates.html" %}
+
+{% block css%}
+<link rel="stylesheet" type="text/css" href="/static/css/style_product.css"/>
+{%endblock%}
+
+
+{% block script%}
+
+{%endblock%}
+
+{% block content%}
+<div id="my-breadcrumbs">
+    <ul class="breadcrumb">
+        <li><a href="/">Trang chủ</a></li>
+        <li><a href="#">Đồng hồ kiddy</a></li>
+    </ul>
+</div>
+<div class="content-category">
+    <nav class="navigation">
+        <ul class="mainmenu">
+            <li><a href="">Đồng hồ Kiddy</a></li>
+            <li><a href="">Phụ kiện Kiddy</a>
+                <ul class="submenu">
+                    <li><a href="">Sim Card</a></li>
+                    <li><a href="">Dây và Củ Sạc</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="list-product-watch">
+        <h2>ĐỒNG HỒ THÔNG MINH</h2>
+        {%if product%}
+        {% for x in product %}
+        <div class="product-watch-item">
+            <div class="item-left">
+                <a href="{% url 'product-watch-detail' id=x.objectid %}">
+                    <amp-img src="{{x.photo.direct}}"
+                             width="200"
+                             height="200"
+                             layout="responsive"
+                             alt="AMP"></amp-img>
+                </a>
+            </div>
+            <div class="item-right">
+                <h4><a href="{% url 'product-watch-detail' id=x.objectid %}">{{x.title}}</a></h4>
+                <div class="item-bottom-category">
+                    <p class="price">
+                        <span class="price-new">{{x.price_sale}}</span><br/>
+                        <span class="price-old">{{x.price}}</span>
+                    </p>
+                    <a href="{% url 'product-watch-detail' id=x.objectid %}">
+                        <button>Mua ngay</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>Chưa có sản phẩm nào.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
