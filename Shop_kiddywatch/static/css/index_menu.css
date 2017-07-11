@@ -10,11 +10,11 @@ body {
 }
 div#content {
     clear: both;
-    width: 80%;
+    width: 85%;
     margin: auto;
 }
 .menu-full{
-width:80%;
+width:85%;
 margin:auto;
 }
 .logo{
@@ -25,7 +25,9 @@ width:265px;
 height:75px;
 }
 .hotline{
-margin-top:10px}
+    margin-top:10px;
+    float: right;
+    }
 .hotline>img{
 width:245px;
 height:55px;
@@ -35,6 +37,8 @@ margin:15px;
 border-style: ridge;
 width:40%;
 float:left;
+ border: 2px solid #a1a1a1;
+border-radius: 25px;
 }
 /*==Style cho menu===*/
 #menu ul {
@@ -51,19 +55,25 @@ float:left;
   margin-left: -5px;
 }
 #menu a {
+font-size: 14px;
+    font-weight: bold;
+        color: #5D696E;
   text-decoration: none;
-  color: #000000;
   display: block;
 }
-#menu a:hover {
+.sub-menu a:hover{
   background: #77c33f;
-  color: #333;
+  color: #fff
+}
+#menu ul li a:hover {
+  color: red;
 }
 
 .sub-menu li {
 background: #F1F1F1;
   display: none;
 }
+
 
 #menu li {
  position: relative;
@@ -114,3 +124,14 @@ ul.breadcrumb li a:hover {
     text-decoration: underline;
 }
 /* end style breadcrumbs  */
+
+
+#menu a.arrow-dropdown:after {
+    content:"▼";
+    position: absolute; right: 10px; top: 0;
+    z-index: 1;
+    width: 20%;
+    height: 100%;
+    pointer-events: none;
+    box-sizing: border-box;
+}

@@ -12,13 +12,15 @@ class HomeView(TemplateView):
     template_name = 'home.html'
 
     def get(self, request, *args, **kwargs):
+
         cat1 = Category.objects.get(id=1)
         cat2 = Category.objects.get(id=2)
         product1 = Product.objects.filter(catgory=cat1)
         product2 = Product.objects.filter(catgory=cat2)
+        slide=PhotoSlideshow.objects.filter(status=1)
         for x in product1:
             print x.photo.direct
-        return render(request, self.template_name, context={'product': product1, "access": product2})
+        return render(request, self.template_name, context={'product': product1, "access": product2,'slide':slide})
 
 
 class ProductView(TemplateView):

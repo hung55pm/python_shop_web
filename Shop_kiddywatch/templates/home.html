@@ -1,37 +1,59 @@
 {% extends "index_templates.html" %}
-
 {% block css%}
 <link rel="stylesheet" type="text/css" href="/static/css/style_product.css"/>
 {%endblock%}
-
-
 {% block script%}
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
 {%endblock%}
 
 {% block content%}
+<div class="slileshow">
+    <div class="slideshow-container">
+        {%if slide%}
+        {% for x in slide %}
+        <div class="mySlides fade" id="autumn">
+            <img src="{{x.direct}}" style="width:100%">
+        </div>
+        {% endfor %}
+        {% else %}
+        {% endif %}
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+<script type="text/javascript">
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 5000); // Change image every 2 seconds
+}
+
+</script>
+
 <div class="content_left">
-<amp-iframe width="500"
-  height="281"
-  layout="responsive"
-  sandbox="allow-scripts allow-same-origin allow-popups"
-  allowfullscreen
-  frameborder="0"
-  src="https://www.facebook.com/Kiddywatch/">
-</amp-iframe>
-<amp-youtube
-    data-videoid="Ad63uGr9qvc"
-    layout="responsive"
-    width="480" height="270"></amp-youtube>
     <amp-youtube
-    data-videoid="opR0yD1YkIU"
-    layout="responsive"
-    width="480" height="270"></amp-youtube>
+            data-videoid="Ad63uGr9qvc"
+            layout="responsive"
+            width="480" height="270"></amp-youtube>
     <amp-youtube
-    data-videoid="kP9edtiwxVA"
-    layout="responsive"
-    width="480" height="270"></amp-youtube>
+            data-videoid="opR0yD1YkIU"
+            layout="responsive"
+            width="480" height="270"></amp-youtube>
+    <amp-youtube
+            data-videoid="kP9edtiwxVA"
+            layout="responsive"
+            width="480" height="270"></amp-youtube>
 </div>
 <div class="content_center">
     <div class="row_content_1">
