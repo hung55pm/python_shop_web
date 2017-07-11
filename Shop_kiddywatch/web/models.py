@@ -22,6 +22,7 @@ class PhotoProduct(models.Model):
     picture = models.FileField(upload_to='photo/')
     direct =models.CharField(max_length=100,blank=True, null=True)
 
+
     def __str__(self):
         return '{}'.format(self.name)
 
@@ -50,3 +51,6 @@ class PhotoSlideshow(models.Model):
     def __str__(self):
         return '{}'.format(self.name)
 
+class ImageTest(models.Model):
+    objectid = models.BigAutoField(primary_key=True)
+    image=models.ImageField()

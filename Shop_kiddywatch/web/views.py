@@ -18,8 +18,6 @@ class HomeView(TemplateView):
         product1 = Product.objects.filter(catgory=cat1)
         product2 = Product.objects.filter(catgory=cat2)
         slide=PhotoSlideshow.objects.filter(status=1)
-        for x in product1:
-            print x.photo.direct
         return render(request, self.template_name, context={'product': product1, "access": product2,'slide':slide})
 
 
